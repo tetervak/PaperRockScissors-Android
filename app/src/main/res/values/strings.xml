@@ -4,5 +4,10 @@
 
     <!-- the Sheridan label -->
     <string name="sheridan">Sheridan, 2022</string>
+    <string name="play">Play</string>
+    <string name="make_your_choice">Make Your Choice</string>
+    <string name="paper">Paper</string>
+    <string name="rock">Rock</string>
+    <string name="scissors">Scissors</string>
 
 </resources>
