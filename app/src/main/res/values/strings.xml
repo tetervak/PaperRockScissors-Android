@@ -9,5 +9,10 @@
     <string name="paper">Paper</string>
     <string name="rock">Rock</string>
     <string name="scissors">Scissors</string>
+    <string name="repeat">Repeat</string>
+    <string name="game_result">Game Result</string>
+    <string name="computer">Computer</string>
+    <string name="you">You</string>
+    <string name="you_win">You are the winner!</string>
 
 </resources>
