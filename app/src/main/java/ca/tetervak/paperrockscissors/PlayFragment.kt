@@ -20,6 +20,10 @@ class PlayFragment : Fragment() {
     ): View {
         _binding = FragmentPlayBinding.inflate(inflater, container, false)
 
+        binding.playButton.setOnClickListener {
+
+        }
+
         return binding.root
     }
 
