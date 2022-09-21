@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import ca.tetervak.paperrockscissors.databinding.FragmentPlayBinding
 import ca.tetervak.paperrockscissors.model.Choice
 import com.google.android.material.snackbar.Snackbar
-import kotlin.random.Random
 
 class PlayFragment : Fragment() {
 
