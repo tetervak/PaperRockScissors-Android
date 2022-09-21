@@ -18,4 +18,8 @@
         android:name="ca.tetervak.paperrockscissors.ResultFragment"
         android:label="@string/result_fragment_label"
         tools:layout="@layout/fragment_result" />
+    <dialog
+        android:id="@+id/aboutFragment"
+        android:name="ca.tetervak.paperrockscissors.AboutFragment"
+        android:label="AboutFragment" /><action android:id="@+id/action_global_aboutFragment" app:destination="@id/aboutFragment"/>
 </navigation>
