@@ -2,17 +2,27 @@
     <string name="app_name">Paper Rock Scissors</string>
     <string name="action_settings">Settings</string>
 
-    <!-- the Sheridan label -->
-    <string name="sheridan">Sheridan, 2022</string>
-    <string name="play">Play</string>
-    <string name="make_your_choice">Make Your Choice</string>
+    <!-- reused strings in the both fragments -->
     <string name="paper">Paper</string>
     <string name="rock">Rock</string>
     <string name="scissors">Scissors</string>
-    <string name="repeat">Repeat</string>
+
+    <!-- the Sheridan label -->
+    <string name="sheridan">Sheridan, 2022</string>
+
+    <!-- Play Fragment -->
+    <string name="play_fragment_label">Play</string>
+    <string name="play">Play</string>
+    <string name="make_your_choice">Make Your Choice</string>
+
+    <!-- Result Fragment -->
+    <string name="result_fragment_label">Result</string>
     <string name="game_result">Game Result</string>
     <string name="computer">Computer</string>
     <string name="you">You</string>
     <string name="you_win">You are the winner!</string>
+    <string name="computer_wins">Computer wins.</string>
+    <string name="replay">Replay.</string>
+    <string name="repeat">Repeat</string>
 
 </resources>

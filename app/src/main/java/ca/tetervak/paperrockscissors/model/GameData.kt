@@ -3,7 +3,7 @@ package ca.tetervak.paperrockscissors.model
 data class GameData(
     val playerOneChoice: Choice,
     val playerTwoChoice: Choice,
-    val result: Result
+    val result: GameResult
 ) {
 
     //val result: Result = getGameResult()
@@ -12,24 +12,24 @@ data class GameData(
     )
 
     companion object {
-        private fun getGameResult(playerOneChoice: Choice, playerTwoChoice: Choice): Result {
+        private fun getGameResult(playerOneChoice: Choice, playerTwoChoice: Choice): GameResult {
             return when (playerOneChoice) {
                 Choice.PAPER -> when (playerTwoChoice) {
-                    Choice.PAPER -> Result.REPLAY
-                    Choice.ROCK -> Result.PLAYER_ONE_WINS
-                    Choice.SCISSORS -> Result.PLAYER_TWO_WINS
+                    Choice.PAPER -> GameResult.REPLAY
+                    Choice.ROCK -> GameResult.PLAYER_ONE_WINS
+                    Choice.SCISSORS -> GameResult.PLAYER_TWO_WINS
                 }
 
                 Choice.ROCK -> when (playerTwoChoice) {
-                    Choice.PAPER -> Result.PLAYER_TWO_WINS
-                    Choice.ROCK -> Result.REPLAY
-                    Choice.SCISSORS -> Result.PLAYER_ONE_WINS
+                    Choice.PAPER -> GameResult.PLAYER_TWO_WINS
+                    Choice.ROCK -> GameResult.REPLAY
+                    Choice.SCISSORS -> GameResult.PLAYER_ONE_WINS
                 }
 
                 Choice.SCISSORS -> when (playerTwoChoice) {
-                    Choice.PAPER -> Result.PLAYER_ONE_WINS
-                    Choice.ROCK -> Result.PLAYER_TWO_WINS
-                    Choice.SCISSORS -> Result.REPLAY
+                    Choice.PAPER -> GameResult.PLAYER_ONE_WINS
+                    Choice.ROCK -> GameResult.PLAYER_TWO_WINS
+                    Choice.SCISSORS -> GameResult.REPLAY
                 }
             }
         }
