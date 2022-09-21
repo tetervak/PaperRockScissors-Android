@@ -27,6 +27,10 @@ class PlayFragment : Fragment() {
     ): View {
         _binding = FragmentPlayBinding.inflate(inflater, container, false)
 
+        binding.selectRandomButton.setOnClickListener {
+            selectRandomChoice()
+        }
+
         binding.playButton.setOnClickListener {
             val userChoice = getUserChoice()
             if(userChoice != null){
@@ -36,6 +40,7 @@ class PlayFragment : Fragment() {
                 remindToSelect()
             }
         }
+
         return binding.root
     }
 
@@ -60,11 +65,6 @@ class PlayFragment : Fragment() {
                 3 -> scissorsButton.isChecked = true
             }
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        selectRandomChoice()
     }
 
     override fun onDestroyView() {
