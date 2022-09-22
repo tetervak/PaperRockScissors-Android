@@ -29,8 +29,8 @@ class ResultFragment : Fragment() {
     ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
 
-        mainViewModel.gameData.observe(viewLifecycleOwner) { data ->
-            updateOutputs(data)
+        mainViewModel.liveGameData.observe(viewLifecycleOwner) { gameData ->
+            updateOutputs(gameData)
         }
 
         binding.repeatButton.setOnClickListener {

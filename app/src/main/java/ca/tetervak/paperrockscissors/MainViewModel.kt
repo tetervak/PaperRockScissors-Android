@@ -9,10 +9,10 @@ import ca.tetervak.paperrockscissors.model.PaperRockScissors
 
 class MainViewModel : ViewModel() {
 
-    private val _gameData = MutableLiveData<GameData>()
-    val gameData: LiveData<GameData> = _gameData
+    private val _liveGameData = MutableLiveData<GameData>()
+    val liveGameData: LiveData<GameData> = _liveGameData
 
     fun setUserChoice(userChoice: Choice) {
-        _gameData.value = PaperRockScissors.play(playerTwoChoice = userChoice)
+        _liveGameData.value = PaperRockScissors.play(playerTwoChoice = userChoice)
     }
 }
