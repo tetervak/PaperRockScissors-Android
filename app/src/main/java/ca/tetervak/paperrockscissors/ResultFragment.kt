@@ -40,10 +40,10 @@ class ResultFragment : Fragment() {
         return binding.root
     }
 
-    private fun updateOutputs(data: GameData) {
-        binding.computerChoice.text = choiceToString(data.playerOneChoice)
-        binding.userChoice.text = choiceToString(data.playerTwoChoice)
-        binding.resultMessage.text = resultToString(data.result)
+    private fun updateOutputs(gameData: GameData) {
+        binding.computerChoice.text = choiceToString(gameData.playerOneChoice)
+        binding.userChoice.text = choiceToString(gameData.playerTwoChoice)
+        binding.resultMessage.text = resultToString(gameData.result)
     }
 
     private fun choiceToString(choice: Choice): String {
@@ -54,8 +54,8 @@ class ResultFragment : Fragment() {
         }
     }
 
-    private fun resultToString(result: GameResult): String {
-        return when (result) {
+    private fun resultToString(gameResult: GameResult): String {
+        return when (gameResult) {
             GameResult.PLAYER_ONE_WINS -> getString(R.string.computer_wins)
             GameResult.PLAYER_TWO_WINS -> getString(R.string.you_win)
             GameResult.REPLAY -> getString(R.string.replay)
