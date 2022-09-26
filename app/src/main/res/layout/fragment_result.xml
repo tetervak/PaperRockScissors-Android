@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="gameData"
-            type="ca.tetervak.paperrockscissors.model.GameData" />
+            name="mainViewModel"
+            type="ca.tetervak.paperrockscissors.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -53,7 +53,7 @@
                     android:textColor="@color/purple_500"
                     android:textSize="20sp"
                     android:textStyle="italic"
-                    gameChoice="@{gameData.playerOneChoice}"
+                    gameChoice="@{mainViewModel.liveGameData.playerOneChoice}"
                     tools:text="@string/paper" />
             </TableRow>
 
@@ -76,7 +76,7 @@
                     android:textColor="@color/purple_500"
                     android:textSize="20sp"
                     android:textStyle="italic"
-                    gameChoice="@{gameData.playerTwoChoice}"
+                    gameChoice="@{mainViewModel.liveGameData.playerTwoChoice}"
                     tools:text="@string/scissors" />
             </TableRow>
 
@@ -91,7 +91,7 @@
             android:textColor="@color/pink_800"
             android:textSize="24sp"
             android:textStyle="italic"
-            gameResult="@{gameData.result}"
+            gameResult="@{mainViewModel.liveGameData.result}"
             tools:text="You are the winner!" />
 
         <Button

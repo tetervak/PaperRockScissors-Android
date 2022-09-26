@@ -25,9 +25,8 @@ class ResultFragment : Fragment() {
     ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
 
-        mainViewModel.liveGameData.observe(viewLifecycleOwner) { gameData ->
-            binding.gameData = gameData
-        }
+        binding.mainViewModel = mainViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.repeatButton.setOnClickListener {
             findNavController().popBackStack()
