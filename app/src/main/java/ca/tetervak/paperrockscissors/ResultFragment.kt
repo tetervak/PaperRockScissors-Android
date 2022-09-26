@@ -8,10 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ca.tetervak.paperrockscissors.databinding.FragmentResultBinding
-import ca.tetervak.paperrockscissors.model.Choice
-import ca.tetervak.paperrockscissors.model.GameData
-import ca.tetervak.paperrockscissors.model.GameResult
-
 
 class ResultFragment : Fragment() {
 
@@ -30,7 +26,7 @@ class ResultFragment : Fragment() {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
 
         mainViewModel.liveGameData.observe(viewLifecycleOwner) { gameData ->
-            updateOutputs(gameData)
+            binding.gameData = gameData
         }
 
         binding.repeatButton.setOnClickListener {
@@ -38,28 +34,6 @@ class ResultFragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    private fun updateOutputs(gameData: GameData) {
-        binding.computerChoice.text = choiceToString(gameData.playerOneChoice)
-        binding.userChoice.text = choiceToString(gameData.playerTwoChoice)
-        binding.resultMessage.text = resultToString(gameData.result)
-    }
-
-    private fun choiceToString(choice: Choice): String {
-        return when (choice) {
-            Choice.PAPER -> getString(R.string.paper)
-            Choice.ROCK -> getString(R.string.rock)
-            Choice.SCISSORS -> getString(R.string.scissors)
-        }
-    }
-
-    private fun resultToString(gameResult: GameResult): String {
-        return when (gameResult) {
-            GameResult.PLAYER_ONE_WINS -> getString(R.string.computer_wins)
-            GameResult.PLAYER_TWO_WINS -> getString(R.string.you_win)
-            GameResult.REPLAY -> getString(R.string.replay)
-        }
     }
 
     override fun onDestroyView() {

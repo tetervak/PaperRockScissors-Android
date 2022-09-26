@@ -1,99 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context=".ResultFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Space
+    <data>
+        <variable
+            name="gameData"
+            type="ca.tetervak.paperrockscissors.model.GameData" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context=".ResultFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/game_result"
-        android:textColor="@color/green_800"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp">
-
-        <TableRow
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@string/computer"
-                android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_result"
+            android:textColor="@color/green_800"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/computer_choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textColor="@color/purple_500"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:text="@string/paper" />
-        </TableRow>
 
-        <TableRow
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/computer"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/computer_choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/purple_500"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    gameChoice="@{gameData.playerOneChoice}"
+                    tools:text="@string/paper" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/you"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/user_choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/purple_500"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    gameChoice="@{gameData.playerTwoChoice}"
+                    tools:text="@string/scissors" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/result_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/you_win"
+            android:textColor="@color/pink_800"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            gameResult="@{gameData.result}"
+            tools:text="You are the winner!" />
+
+        <Button
+            android:id="@+id/repeat_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/repeat" />
+
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@string/you"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/user_choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textColor="@color/purple_500"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:text="@string/scissors" />
-        </TableRow>
-
-    </TableLayout>
-
-    <TextView
-        android:id="@+id/result_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/you_win"
-        android:textColor="@color/pink_800"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        tools:text="You are the winner!" />
-
-    <Button
-        android:id="@+id/repeat_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/repeat" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2" />
-
-
-</LinearLayout>
+    </LinearLayout>
+</layout>
